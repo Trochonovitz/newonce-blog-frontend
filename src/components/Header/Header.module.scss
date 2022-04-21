@@ -1,0 +1,46 @@
+.wrapper {
+  position: sticky;
+  top: 0px;
+  height: 20vh;
+
+  .logo {
+    background-color: black;
+    color: white;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+  }
+
+  .feed {
+    height: 55%;
+    background-color: white;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    .openButton {
+      background: transparent;
+      margin: 0 0 0 20px;
+      padding: 0px;
+      border: none;
+      color: black;
+    }
+
+    .subscribeButton {
+      background-color: rgb(200, 0, 0);
+      color: white;
+      font-weight: 1000;
+      font-style: italic;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
+      margin: 0px;
+      padding: 12px 7px;
+    }
+  }
+}
