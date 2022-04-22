@@ -1,8 +1,8 @@
 import { Options } from "types/enum";
-import { CloseSideMenu } from "types/types";
+import { setSideMenu } from "types/types";
 import styles from "./SideMenu.module.scss";
 
-const SideMenu = ({ setNavigationVisibility }: CloseSideMenu) => {
+const SideMenu = ({ setNavigationVisibility }: setSideMenu) => {
   const options = [
     Options.LOGOWANIE,
     Options.CLUB,

@@ -1,3 +1,3 @@
-export type CloseSideMenu = {
+export type setSideMenu = {
   setNavigationVisibility: (data: boolean) => void;
 };

@@ -1,7 +1,7 @@
-import { CloseSideMenu } from "types/types";
+import { setSideMenu } from "types/types";
 import styles from "./Header.module.scss";
 
-const Header = ({ setNavigationVisibility }: CloseSideMenu) => {
+const Header = ({ setNavigationVisibility }: setSideMenu) => {
   const openSideMenu = () => setNavigationVisibility(true);
 
   return (
