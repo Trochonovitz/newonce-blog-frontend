@@ -1,19 +1,33 @@
-import { setSideMenu } from "types/types";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Logo from "components/Logo/Logo";
+import HamburgerIcon from "components/HamburgerIcon/HamburgerIcon";
 import styles from "./Header.module.scss";
 
-const Header = ({ setNavigationVisibility }: setSideMenu) => {
+const Header = ({
+  setNavigationVisibility,
+}: {
+  setNavigationVisibility: Function;
+}) => {
+  const { pathname } = useRouter();
   const openSideMenu = () => setNavigationVisibility(true);
 
   return (
     <header className={styles.wrapper}>
-      <h1 className={styles.logo}>newonce</h1>
+      <div className={styles.styledLogo}>
+        <Logo />
+      </div>
       <div className={styles.feed}>
-        <h2>Feed</h2>
-        <div>
+        {pathname !== "/" ? (
+          <Link href="/" passHref>
+            <h2>Powrót</h2>
+          </Link>
+        ) : (
+          <h2>Feed</h2>
+        )}
+        <div className={styles.buttonsContainer}>
           <button className={styles.subscribeButton}>subskrybuj</button>
-          <button onClick={openSideMenu} className={styles.openButton}>
-            X
-          </button>
+          <HamburgerIcon onClick={openSideMenu}>X</HamburgerIcon>
         </div>
       </div>
     </header>

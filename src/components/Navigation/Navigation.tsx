@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ReactNode } from "react";
 import Image from "next/image";
 import Feed from "../../../public/icons/feed.svg";
 import Mic from "../../../public/icons/mic.svg";
@@ -7,29 +7,33 @@ import Search from "../../../public/icons/search.svg";
 import User from "../../../public/icons/user.svg";
 import SideMenu from "components/SideMenu/SideMenu";
 import styles from "./Navigation.module.scss";
-import Header from "components/Header/Header";
 
-const Navigation = () => {
-  const [navigationVisibility, setNavigationVisibility] = useState(false);
-
+const Navigation = ({
+  children,
+  navigationVisibility,
+  setNavigationVisibility,
+}: {
+  children: ReactNode;
+  navigationVisibility: boolean;
+  setNavigationVisibility: Function;
+}) => {
   return (
     <>
-      <Header setNavigationVisibility={setNavigationVisibility} />
       {navigationVisibility && (
         <SideMenu setNavigationVisibility={setNavigationVisibility} />
       )}
-
+      {children}
       <section className={styles.down}>
         <div className={styles.downElement}>
           <Image src={Feed} alt="feed icon" />
           <p className={styles.description}>Feed</p>
         </div>
         <div className={styles.downElement}>
-          <Image src={Mic} alt="microphone icon" />
+          <Image src={Radio} alt="microphone icon" />
           <p className={styles.description}>Radio</p>
         </div>
         <div className={styles.downElement}>
-          <Image src={Radio} alt="radio icon" />
+          <Image src={Mic} alt="radio icon" />
           <p className={styles.description}>Podcasty</p>
         </div>
         <div className={styles.downElement}>

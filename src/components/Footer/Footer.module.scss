@@ -1,0 +1,65 @@
+@mixin download-section {
+  width: 33%;
+  height: 100%;
+}
+
+.wrapper {
+  background-color: black;
+  color: white;
+  padding: 20px;
+
+  .title {
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+    margin: 0px;
+    padding: 0 0 20px 0;
+  }
+
+  .styledLogo {
+    height: 50px;
+    border-bottom: 2px solid white;
+    padding: 10px 0;
+  }
+
+  .downloadSection {
+    display: flex;
+    height: 50px;
+    margin: 20px 0;
+
+    .downloadHeader {
+      @include download-section;
+      border-bottom: 2px solid white;
+    }
+
+    .downloadTile {
+      @include download-section;
+      background-color: blue;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      border: 2px solid white;
+    }
+  }
+
+  .additionalLinksContainer {
+    .list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      list-style-type: none;
+      padding: 0px;
+      margin: 0px;
+      color: rgb(119 136 146);
+      font-size: 0.8rem;
+
+      .listElement {
+        padding: 10px 10px 0 0;
+      }
+    }
+  }
+
+  .copyright {
+    margin: 20px 0 0 0;
+    color: grey;
+    font-size: 0.65rem;
+  }
+}

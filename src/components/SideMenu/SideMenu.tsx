@@ -1,8 +1,11 @@
 import { Options } from "types/enum";
-import { setSideMenu } from "types/types";
 import styles from "./SideMenu.module.scss";
 
-const SideMenu = ({ setNavigationVisibility }: setSideMenu) => {
+const SideMenu = ({
+  setNavigationVisibility,
+}: {
+  setNavigationVisibility: Function;
+}) => {
   const options = [
     Options.LOGOWANIE,
     Options.CLUB,
@@ -24,7 +27,7 @@ const SideMenu = ({ setNavigationVisibility }: setSideMenu) => {
           X
         </button>
         {options.map((option, index) => (
-          <li className={styles.listElement} key={options[index]}>
+          <li className={styles.listElement} key={index}>
             {option}
           </li>
         ))}

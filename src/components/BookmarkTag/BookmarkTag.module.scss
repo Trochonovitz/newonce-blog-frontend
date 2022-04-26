@@ -1,0 +1,13 @@
+.wrapper {
+  width: 45px;
+  height: 45px;
+  border: 2px solid black;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1);
+}

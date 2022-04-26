@@ -1,9 +1,12 @@
 import Head from "next/head";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import Navigation from "components/Navigation/Navigation";
+import Header from "components/Header/Header";
+import Footer from "components/Footer/Footer";
 // import styles from "./MainTemplate.module.scss";
 
 const MainTemplate = ({ children }: { children: ReactNode }) => {
+  const [navigationVisibility, setNavigationVisibility] = useState(false);
   return (
     <>
       <Head>
@@ -14,9 +17,14 @@ const MainTemplate = ({ children }: { children: ReactNode }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation />
-      {children}
-      <footer>footer</footer>
+      <Header setNavigationVisibility={setNavigationVisibility} />
+      <Navigation
+        navigationVisibility={navigationVisibility}
+        setNavigationVisibility={setNavigationVisibility}
+      >
+        {children}
+        <Footer />
+      </Navigation>
     </>
   );
 };

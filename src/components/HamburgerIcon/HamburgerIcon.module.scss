@@ -1,0 +1,43 @@
+@mixin hamburger-line {
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  border-radius: 5px;
+  height: 2px;
+}
+
+.wrapper {
+  background-color: white;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  cursor: pointer;
+
+  .outerSpan {
+    width: 15px;
+    height: 12px;
+    display: inline-block;
+    position: relative;
+
+    .innerSpan {
+      @include hamburger-line;
+      left: 0;
+      top: 50%;
+
+      &::before,
+      &::after {
+        @include hamburger-line;
+        content: "";
+        left: 0;
+      }
+
+      &::before {
+        top: -6px;
+      }
+
+      &::after {
+        top: 6px;
+      }
+    }
+  }
+}

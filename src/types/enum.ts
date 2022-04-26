@@ -10,3 +10,23 @@ export enum Options {
   REG_1 = "Regulamin ogólny korzystania z serwisu",
   REG_2 = "Regulamin korzystania z usługi subskypcyjnej newonce club",
 }
+
+export enum Categories {
+  WSZYSTKO = "Wszystko",
+  RAP_PL = "Polski rap",
+  KINO = "Kino",
+  SERIALE = "Seriale & tv",
+  RAP_ZAGRANICZNY = "Zagraniczny rap",
+  SPRAWY = "Sprawy",
+  OPINIA = "Opinia",
+  POP = "Pop",
+  ROZMOWY = "Rozmowy",
+  TECH = "Tech",
+  LAJTOWO = "Lajtowo",
+  GAMING = "Gaming",
+  NEWONCE = "Newonce",
+  ALTERNATYWA = "Alternatywa",
+  SPORTOWO = "Sportowo",
+  STYL = "Styl",
+  ELEKTRONIKA = "Elektronika",
+}

@@ -1,0 +1,44 @@
+.wrapper {
+  width: 100%;
+  min-height: 350px;
+  border: 2px solid black;
+  display: grid;
+  grid-template-rows: 60% 40%;
+  margin: 0 0 20px 0;
+  position: relative;
+
+  .infoBox {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    border-top: 2px solid black;
+    padding: 0 15px;
+    position: relative;
+
+    .title {
+      margin: 0px;
+      padding: 20px 0 0 0;
+      grid-row: 1;
+    }
+
+    .author {
+      color: blue;
+      font-size: 0.8rem;
+      margin: 0px;
+      padding: 0 20px 0 0;
+      grid-row: 2;
+    }
+
+    .time {
+      color: grey;
+      margin: 0px;
+      padding: 0px;
+      font-size: 0.8rem;
+      grid-row: 2;
+    }
+
+    .subtitleBox {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
