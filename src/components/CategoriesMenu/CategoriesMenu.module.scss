@@ -1,13 +1,18 @@
 @mixin category {
   display: flex;
   height: fit-content;
-  border: 1px solid grey;
   border-radius: 20px;
   margin: 0 10px 0 0;
   padding: 5px 10px;
   font-size: 0.9rem;
   cursor: pointer;
   white-space: nowrap;
+  border: 1px solid rgb(220, 220, 220);
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    border: 1px solid grey;
+  }
 
   &:first-child {
     margin: 0 10px;
@@ -17,21 +22,28 @@
 .categoriesContainer {
   list-style-type: none;
   margin: 0px;
-  padding: 0px;
+  padding: 10px 0px 12px 0;
   display: flex;
   max-width: 100vw;
   overflow: auto;
-  margin: 10px 0;
-  height: 50px;
+  background-color: white;
+  position: sticky;
+  top: calc(15vh - 1px);
+  z-index: 2;
+  border-bottom: 1px solid rgb(220, 220, 220);
 
   .unpickedCategory {
     @include category;
-    background-color: whitesmoke;
+    background-color: white;
   }
 
   .pickedCategory {
     @include category;
     background-color: black;
     color: white;
+  }
+
+  @media (min-width: 1024px) {
+    top: calc(7vh - 1px);
   }
 }

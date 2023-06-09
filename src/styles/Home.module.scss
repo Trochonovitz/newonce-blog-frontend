@@ -1,3 +1,14 @@
 .wrapper {
   padding: 20px;
+  background-color: rgb(245, 245, 245);
+
+  .title {
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: block;
+      margin: 0 0 15px 0;
+      padding: 0px;
+    }
+  }
 }

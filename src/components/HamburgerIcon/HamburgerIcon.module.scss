@@ -13,6 +13,19 @@
   padding: 0px;
   cursor: pointer;
 
+  @media (min-width: 1024px) {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgb(235, 235, 235);
+
+    &:hover {
+      background-color: rgb(211, 211, 211);
+    }
+  }
+
   .outerSpan {
     width: 15px;
     height: 12px;

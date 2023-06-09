@@ -8,7 +8,6 @@ import {
   Articles,
   CategoriesData,
 } from "types/interfaces";
-import MainTemplate from "templates/MainTemplate/MainTemplate";
 import ArticleCard from "components/ArticleCard/ArticleCard";
 import CategoriesMenu from "components/CategoriesMenu/CategoriesMenu";
 import styles from "styles/Home.module.scss";
@@ -24,6 +23,7 @@ const Home: NextPage<{
 }> = ({ articles, categories }) => {
   const [pickedCategory, setPickedCategory] = useState(Categories.WSZYSTKO);
   const { pathname } = useRouter();
+  // filtrowanie contentu będzie odbywało się poprzez przechodzenie po linkach
   const filteredContent =
     pickedCategory === Categories.WSZYSTKO
       ? articles
@@ -37,7 +37,7 @@ const Home: NextPage<{
 
   return (
     // <CategoryContext.Provider value={{ pickedCategory, setPickedCategory }}>
-    <MainTemplate>
+    <>
       {pathname === "/" && (
         <CategoriesMenu
           categories={categories}
@@ -47,6 +47,7 @@ const Home: NextPage<{
       )}
       {/* maina wyciągnąć do osobnego componentu i podawać tablicę jako props? Albo filtrować w środku */}
       <main className={styles.wrapper}>
+        <h1 className={styles.title}>Najnowsze</h1>
         {!filteredContent.length
           ? "nic tu nie ma"
           : filteredContent.map(
@@ -72,17 +73,17 @@ const Home: NextPage<{
               )
             )}
       </main>
-    </MainTemplate>
+    </>
     // </CategoryContext.Provider>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
   const articlesResponse = await fetch(
-    "http://localhost:1337/api/articles?populate=*"
+    `${process.env.MAIN_URL}/articles?populate=*`
   );
   const categoriesResponse = await fetch(
-    "http://localhost:1337/api/content-type-builder/components"
+    `${process.env.MAIN_URL}/content-type-builder/components`
   );
   const { data: articles }: MainDataArticles = await articlesResponse.json();
   const { data: categories }: MainDataCategories =

@@ -9,19 +9,45 @@
   align-items: center;
   z-index: 2;
   padding: 20px 0px;
-}
 
-.downElement {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
+  @media (min-width: 1024px) {
+    bottom: 700px;
+    left: 100px;
+    width: 30%;
+    height: 35px;
+    border-radius: 10px;
+  }
 
-  .description {
-    margin: 0px;
-    padding: 5px 0 0 0;
-    font-size: 0.7rem;
+  .downElement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    cursor: pointer;
     color: grey;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      color: blue;
+    }
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+
+      &:last-child {
+        display: none;
+      }
+    }
+
+    .description {
+      margin: 0px;
+      padding: 5px 0 0 0;
+      font-size: 0.7rem;
+
+      @media (min-width: 1024px) {
+        padding: 0 0 0 5px;
+      }
+    }
   }
 }

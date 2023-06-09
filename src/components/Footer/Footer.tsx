@@ -12,11 +12,13 @@ const Footer = () => {
         <div className={styles.downloadHeader}>
           <p>Pobierz:</p>
         </div>
-        <div className={styles.downloadTile}>
-          <p>App Store</p>
-        </div>
-        <div className={styles.downloadTile}>
-          <p>Google Play</p>
+        <div className={styles.downloadTiles}>
+          <div className={styles.downloadTile}>
+            <p>App Store</p>
+          </div>
+          <div className={styles.downloadTile}>
+            <p>Google Play</p>
+          </div>
         </div>
       </div>
       <div className={styles.additionalLinksContainer}>

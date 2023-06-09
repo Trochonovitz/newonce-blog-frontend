@@ -1,6 +1,18 @@
-.logo {
-  color: white;
-  height: 100%;
-  width: 100%;
-  background-color: black;
+.wrapper {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logo {
+    color: white;
+    background-color: black;
+    height: 35%;
+    width: 105px;
+
+    @media (min-width: 1024px) {
+      background-color: white;
+      color: black;
+    }
+  }
 }

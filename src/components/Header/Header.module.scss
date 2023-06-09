@@ -2,26 +2,74 @@
   position: sticky;
   top: -1px;
   height: 15vh;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: 40% 60%;
+  border-bottom: 2px solid black;
 
-  .styledLogo {
-    background-color: black;
-    height: 40%;
+  @media (min-width: 1024px) {
+    height: 7vh;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 2px solid lightgrey;
+    background-color: white;
   }
 
-  .feed {
-    height: 60%;
-    background-color: white;
-    border-bottom: 2px solid black;
+  .styledLogo {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 50px;
+
+    @media (min-width: 1024px) {
+      background-color: white;
+      grid-column: 2;
+    }
+  }
+
+  .feedContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    background-color: white;
+
+    .mobileNavigationContainer {
+      @media (min-width: 1024px) {
+        display: none;
+      }
+    }
 
     .buttonsContainer {
       display: flex;
+      position: relative;
+
+      @media (min-width: 1024px) {
+        top: 0px;
+        right: -50%;
+      }
+
+      .loginButton {
+        display: none;
+
+        @media (min-width: 1024px) {
+          display: block;
+          background-color: white;
+          border: 1px solid black;
+          color: black;
+          font-weight: 1000;
+          font-size: 0.7rem;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            color: white;
+            background-color: blue;
+            border: 1px solid blue;
+          }
+        }
+      }
 
       .subscribeButton {
         background-color: rgb(200, 0, 0);
@@ -34,6 +82,12 @@
         border-radius: 5px;
         margin: 0 20px 0 0;
         padding: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: red;
+        }
       }
     }
   }

@@ -1,5 +1,4 @@
 .wrapper {
-  width: 100%;
   min-height: 350px;
   border: 2px solid black;
   display: grid;
@@ -7,38 +6,63 @@
   margin: 0 0 20px 0;
   position: relative;
 
+  @media (min-width: 768px) {
+    grid-template-rows: 250px;
+    grid-template-columns: 340px 1fr;
+    min-height: 250px;
+  }
+
   .infoBox {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     border-top: 2px solid black;
-    padding: 0 15px;
     position: relative;
+    background-color: white;
+
+    @media (min-width: 768px) {
+      grid-template-rows: 20% 80%;
+      border-top: none;
+      border-left: 2px solid black;
+      padding: 0px;
+    }
 
     .title {
       margin: 0px;
-      padding: 20px 0 0 0;
+      padding: 20px 15px 0 15px;
       grid-row: 1;
-    }
+      cursor: pointer;
 
-    .author {
-      color: blue;
-      font-size: 0.8rem;
-      margin: 0px;
-      padding: 0 20px 0 0;
-      grid-row: 2;
-    }
-
-    .time {
-      color: grey;
-      margin: 0px;
-      padding: 0px;
-      font-size: 0.8rem;
-      grid-row: 2;
+      @media (min-width: 768px) {
+        grid-row: 2;
+      }
     }
 
     .subtitleBox {
       display: flex;
       align-items: center;
+      padding: 0 15px;
+
+      @media (min-width: 768px) {
+        grid-row: 1 / 2;
+        border-bottom: 2px solid black;
+        height: 43px;
+      }
+
+      .author {
+        color: blue;
+        font-size: 0.8rem;
+        margin: 0px;
+        padding: 0 20px 0 0;
+        grid-row: 2;
+      }
+
+      .time {
+        color: grey;
+        margin: 0px;
+        padding: 0px;
+        font-size: 0.8rem;
+        grid-row: 2;
+      }
     }
   }
 }
